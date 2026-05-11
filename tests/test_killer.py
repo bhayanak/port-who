@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 
 import psutil
 
-from port_who.actions.killer import (
+from pview.actions.killer import (
     is_owned_by_current_user,
     is_system_critical,
     kill_process,

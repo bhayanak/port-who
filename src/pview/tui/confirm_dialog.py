@@ -7,10 +7,10 @@ from textual.containers import Vertical
 from textual.screen import ModalScreen
 from textual.widgets import Button, Label
 
-from port_who.actions.killer import is_system_critical, kill_process
+from pview.actions.killer import is_system_critical, kill_process
 
 if TYPE_CHECKING:
-    from port_who.models import PortEntry
+    from pview.models import PortEntry
 
 
 class KillConfirmDialog(ModalScreen[bool]):

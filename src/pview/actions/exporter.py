@@ -7,7 +7,7 @@ from dataclasses import asdict
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from port_who.models import PortEntry
+    from pview.models import PortEntry
 
 
 def to_json(entries: list[PortEntry], *, indent: int = 2) -> str:

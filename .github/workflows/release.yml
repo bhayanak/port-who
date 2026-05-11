@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/port-who
+      url: https://pypi.org/p/pview
     steps:
       - uses: actions/checkout@v4
 

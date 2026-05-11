@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "port-who"
+name = "pview"
 version = "1.0.0"
 description = "Beautiful Port Inspector TUI — see who's using your ports"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
-authors = [{ name = "Port Who Contributors" }]
+authors = [{ name = "pview Contributors" }]
 keywords = ["port", "process", "tui", "network", "inspector", "cli"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -35,12 +35,12 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/port-who/port-who"
-Repository = "https://github.com/port-who/port-who"
-Issues = "https://github.com/port-who/port-who/issues"
+Homepage = "https://github.com/bhayanak/pview"
+Repository = "https://github.com/bhayanak/pview"
+Issues = "https://github.com/bhayanak/pview/issues"
 
 [project.scripts]
-port-who = "port_who.cli:app"
+pview = "pview.cli:app"
 
 [project.optional-dependencies]
 dev = [
@@ -65,8 +65,8 @@ testpaths = ["tests"]
 addopts = "-v --tb=short"
 
 [tool.coverage.run]
-source = ["port_who"]
-omit = ["src/port_who/tui/*"]
+source = ["pview"]
+omit = ["src/pview/tui/*"]
 
 [tool.coverage.report]
 fail_under = 80

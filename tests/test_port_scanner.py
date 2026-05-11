@@ -5,8 +5,8 @@ from unittest.mock import MagicMock, patch
 import psutil
 
 from conftest import make_sconn
-from port_who.collectors.port_scanner import _build_entry, check_port, scan_ports
-from port_who.models import Protocol
+from pview.collectors.port_scanner import _build_entry, check_port, scan_ports
+from pview.models import Protocol
 
 
 class TestBuildEntry:

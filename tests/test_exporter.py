@@ -4,8 +4,8 @@ import csv
 import io
 import json
 
-from port_who.actions.exporter import to_csv, to_json
-from port_who.models import PortEntry
+from pview.actions.exporter import to_csv, to_json
+from pview.models import PortEntry
 
 
 class TestToJson:

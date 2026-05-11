@@ -14,9 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Port scanning via psutil (TCP + UDP listening sockets)
 - Process enrichment: CPU%, memory, full command line, user, creation time
 - One-key kill with confirmation dialog (SIGTERM default, SIGKILL with `--force`)
-- `port-who check <port>` — quick single-port lookup
-- `port-who kill <port>` — kill process on a port with safety checks
-- `port-who list` — non-interactive listing with `--format json|csv|table`
+- `pview check <port>` — quick single-port lookup
+- `pview kill <port>` — kill process on a port with safety checks
+- `pview list` — non-interactive listing with `--format json|csv|table`
 - `--watch` mode with configurable refresh interval
 - `--filter` by process name
 - System-critical process protection (refuses to kill init, sshd, etc.)

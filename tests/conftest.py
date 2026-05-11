@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from port_who.models import PortEntry, Protocol
+from pview.models import PortEntry, Protocol
 
 
 @pytest.fixture

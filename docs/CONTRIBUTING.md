@@ -1,4 +1,4 @@
-# Contributing to Port Who
+# Contributing to pview
 
 Thank you for your interest in contributing!
 
@@ -6,8 +6,8 @@ Thank you for your interest in contributing!
 
 ```bash
 # Clone the repo
-git clone https://github.com/port-who/port-who.git
-cd port-who
+git clone https://github.com/bhayanak/pview.git
+cd pview
 
 # Create a virtual environment
 python -m venv .venv
@@ -21,7 +21,7 @@ pip install -e ".[dev]"
 
 ```bash
 # Run full test suite with coverage
-pytest --cov=port_who --cov-report=term-missing
+pytest --cov=pview --cov-report=term-missing
 
 # Run a specific test file
 pytest tests/test_killer.py -v
@@ -51,5 +51,5 @@ ruff format src/ tests/
 
 ## Reporting Issues
 
-- Use [GitHub Issues](https://github.com/port-who/port-who/issues)
+- Use [GitHub Issues](https://github.com/bhayanak/pview/issues)
 - Include your OS, Python version, and steps to reproduce

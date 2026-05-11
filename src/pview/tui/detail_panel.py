@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 from textual.widgets import Static
 
 if TYPE_CHECKING:
-    from port_who.models import PortEntry
+    from pview.models import PortEntry
 
 
 class DetailPanel(Static):

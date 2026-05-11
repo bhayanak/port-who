@@ -1,19 +1,19 @@
 <p align="center">
-  <img src="logo.png" alt="Port Who" width="500" height="250">
+  <img src="logo.png" alt="pview" width="500" height="250">
 </p>
 
-<h1 align="center">Port Who</h1>
+<h1 align="center">pview</h1>
 
 <p align="center">
   <strong>Beautiful Port Inspector TUI — see who's using your ports</strong>
 </p>
 
 <p align="center">
-  <a href="https://pypi.org/project/port-who/"><img src="https://img.shields.io/pypi/v/port-who?color=blue&label=PyPI" alt="PyPI"></a>
-  <a href="https://pypi.org/project/port-who/"><img src="https://img.shields.io/pypi/pyversions/port-who" alt="Python Versions"></a>
-  <a href="https://github.com/bhayanak/port-who/actions/workflows/ci.yml"><img src="https://github.com/bhayanak/port-who/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://github.com/bhayanak/port-who/blob/main/LICENSE"><img src="https://img.shields.io/github/license/bhayanak/port-who" alt="License"></a>
-  <a href="https://github.com/bhayanak/port-who/releases"><img src="https://img.shields.io/github/v/release/bhayanak/port-who" alt="Release"></a>
+  <a href="https://pypi.org/project/pview/"><img src="https://img.shields.io/pypi/v/pview?color=blue&label=PyPI" alt="PyPI"></a>
+  <a href="https://pypi.org/project/pview/"><img src="https://img.shields.io/pypi/pyversions/pview" alt="Python Versions"></a>
+  <a href="https://github.com/bhayanak/pview/actions/workflows/ci.yml"><img src="https://github.com/bhayanak/pview/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/bhayanak/pview/blob/main/LICENSE"><img src="https://img.shields.io/github/license/bhayanak/pview" alt="License"></a>
+  <a href="https://github.com/bhayanak/pview/releases"><img src="https://img.shields.io/github/v/release/bhayanak/pview" alt="Release"></a>
 </p>
 
 ---
@@ -37,14 +37,14 @@ A gorgeous, fast alternative to `lsof -i` and `netstat`. See which processes are
 | **One-Key Kill** | Select process → press `k` → confirm → done |
 | **Filter/Search** | Filter by port number or process name |
 | **Watch Mode** | Live-updating view with configurable interval |
-| **Port Check** | Quick check: `port-who check 3000` |
+| **Port Check** | Quick check: `pview check 3000` |
 | **JSON/CSV Export** | Machine-readable output for scripting |
 | **Safety Guards** | Refuses to kill system-critical processes |
 
 ## Install
 
 ```bash
-pip install port-who
+pip install pview
 ```
 
 Requires **Python 3.10+**. Works on **macOS** and **Linux**.
@@ -54,52 +54,52 @@ Requires **Python 3.10+**. Works on **macOS** and **Linux**.
 ### Interactive TUI (default)
 
 ```bash
-port-who
+pview
 ```
 
 ### Non-interactive listing
 
 ```bash
 # Rich table output
-port-who list
+pview list
 
 # JSON output
-port-who list --format json
+pview list --format json
 
 # CSV output
-port-who list --format csv
+pview list --format csv
 
 # Filter by process name
-port-who list --filter postgres
+pview list --filter postgres
 
 # Watch mode (live refresh)
-port-who list --watch
+pview list --watch
 
 # TCP only
-port-who list --no-udp
+pview list --no-udp
 ```
 
 ### Check a specific port
 
 ```bash
-port-who check 3000
+pview check 3000
 # → Port 3000: node (PID 12345) — node server.js
 
-port-who check 9999
+pview check 9999
 # → ✅ Port 9999 is free.
 ```
 
 ### Kill a process by port
 
 ```bash
-port-who kill 3000
+pview kill 3000
 # → Kill node (PID 12345) on port 3000? [y/N]
 
 # Skip confirmation
-port-who kill 3000 --yes
+pview kill 3000 --yes
 
 # Force kill (SIGKILL)
-port-who kill 3000 --force --yes
+pview kill 3000 --force --yes
 ```
 
 ## TUI Keybindings
@@ -116,7 +116,7 @@ port-who kill 3000 --force --yes
 ## TUI Preview
 
 ```
-╭─ Port Who ──────────────────────────────────────────────────╮
+╭─ pview ──────────────────────────────────────────────────╮
 │ Filter: [________]                                           │
 ├──────┬──────────┬───────┬──────────┬──────┬─────────┬───────┤
 │ Port │ Process  │  PID  │   User   │ CPU% │ Memory  │Status │
@@ -134,12 +134,12 @@ port-who kill 3000 --force --yes
 ## Development
 
 ```bash
-git clone https://github.com/port-who/port-who.git
-cd port-who
+git clone https://github.com/bhayanak/pview.git
+cd pview
 pip install -e ".[dev]"
 
 # Run tests
-pytest --cov=port_who --cov-report=term-missing
+pytest --cov=pview --cov-report=term-missing
 
 # Lint & format
 ruff check src/ tests/

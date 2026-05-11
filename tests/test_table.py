@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from rich.table import Table
 
-from port_who.models import PortEntry
-from port_who.output.table import print_table, render_table
+from pview.models import PortEntry
+from pview.output.table import print_table, render_table
 
 
 class TestRenderTable:

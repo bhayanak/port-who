@@ -8,15 +8,15 @@ import typer
 from rich.console import Console
 from rich.live import Live
 
-from port_who import __version__
-from port_who.actions.exporter import to_csv, to_json
-from port_who.actions.killer import is_system_critical, kill_process
-from port_who.collectors.port_scanner import check_port, scan_ports
-from port_who.output.table import print_table, render_table
+from pview import __version__
+from pview.actions.exporter import to_csv, to_json
+from pview.actions.killer import is_system_critical, kill_process
+from pview.collectors.port_scanner import check_port, scan_ports
+from pview.output.table import print_table, render_table
 
 console = Console()
 app = typer.Typer(
-    name="port-who",
+    name="pview",
     help="Beautiful Port Inspector TUI — see who's using your ports.",
     no_args_is_help=False,
     invoke_without_command=True,
@@ -31,7 +31,7 @@ class OutputFormat(str, Enum):
 
 def version_callback(value: bool) -> None:
     if value:
-        console.print(f"port-who {__version__}")
+        console.print(f"pview {__version__}")
         raise typer.Exit()
 
 
@@ -47,7 +47,7 @@ def main(
         help="Show version and exit.",
     ),
 ) -> None:
-    """Port Who — Beautiful Port Inspector TUI."""
+    """pview — Beautiful Port Inspector TUI."""
     if ctx.invoked_subcommand is None:
         _launch_tui()
 
@@ -55,9 +55,9 @@ def main(
 def _launch_tui() -> None:
     """Launch the Textual TUI."""
     try:
-        from port_who.tui.app import PortWhoApp
+        from pview.tui.app import PviewApp
 
-        app_tui = PortWhoApp()
+        app_tui = PviewApp()
         app_tui.run()
     except ImportError as exc:
         console.print(
@@ -123,7 +123,7 @@ def _watch_mode(
                 entries = scan_ports(tcp=tcp, udp=udp)
                 if filter_name:
                     entries = [e for e in entries if filter_name.lower() in e.process_name.lower()]
-                table = render_table(entries, title=f"Port Who (watching every {refresh}s)")
+                table = render_table(entries, title=f"pview (watching every {refresh}s)")
                 live.update(table)
                 time.sleep(refresh)
     except KeyboardInterrupt:

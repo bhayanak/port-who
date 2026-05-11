@@ -4,7 +4,7 @@ import socket
 
 import psutil
 
-from port_who.models import PortEntry, Protocol
+from pview.models import PortEntry, Protocol
 
 # Map psutil socket families/types to our protocol enum
 _TCP_TYPES = {socket.SOCK_STREAM}
@@ -144,7 +144,10 @@ def check_port(port: int) -> PortEntry | None:
 
 
 def _build_entry(
-    conn: object, port: int, proto: Protocol, pid: int,
+    conn: object,
+    port: int,
+    proto: Protocol,
+    pid: int,
 ) -> PortEntry | None:
 
     try:

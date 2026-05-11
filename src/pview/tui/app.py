@@ -5,17 +5,17 @@ from textual.binding import Binding
 from textual.containers import Horizontal
 from textual.widgets import Footer, Header, Input, Static
 
-from port_who.collectors.port_scanner import scan_ports
-from port_who.models import PortEntry
-from port_who.tui.confirm_dialog import KillConfirmDialog
-from port_who.tui.detail_panel import DetailPanel
-from port_who.tui.port_table import PortTable
+from pview.collectors.port_scanner import scan_ports
+from pview.models import PortEntry
+from pview.tui.confirm_dialog import KillConfirmDialog
+from pview.tui.detail_panel import DetailPanel
+from pview.tui.port_table import PortTable
 
 
-class PortWhoApp(App):
-    """Port Who — Beautiful Port Inspector TUI."""
+class PviewApp(App):
+    """pview — Beautiful Port Inspector TUI."""
 
-    TITLE = "Port Who"
+    TITLE = "pview"
     SUB_TITLE = "Beautiful Port Inspector"
     CSS = """
     Screen {

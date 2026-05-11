@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 from textual.widgets import DataTable
 
 if TYPE_CHECKING:
-    from port_who.models import PortEntry
+    from pview.models import PortEntry
 
 COLUMNS = ("Port", "Proto", "Process", "PID", "User", "CPU%", "Memory", "Status")
 

@@ -6,10 +6,10 @@ from rich.console import Console
 from rich.table import Table
 
 if TYPE_CHECKING:
-    from port_who.models import PortEntry
+    from pview.models import PortEntry
 
 
-def render_table(entries: list[PortEntry], *, title: str = "Port Who") -> Table:
+def render_table(entries: list[PortEntry], *, title: str = "pview") -> Table:
     """Build a Rich table from port entries."""
     table = Table(title=title, show_lines=False, expand=True)
     table.add_column("Port", style="cyan bold", justify="right", width=7)
@@ -42,7 +42,7 @@ def render_table(entries: list[PortEntry], *, title: str = "Port Who") -> Table:
     return table
 
 
-def print_table(entries: list[PortEntry], *, title: str = "Port Who") -> None:
+def print_table(entries: list[PortEntry], *, title: str = "pview") -> None:
     """Print a Rich table of port entries to the console."""
     console = Console()
     if not entries:
